@@ -27,9 +27,9 @@ class Person:
         '''
         returns True if address is not set, false in other case
         '''
-        return self.address == ''
+        return self.address == '' or self.address is None
 
 
 if __name__ == '__main__':
-    person = Person('Alexander', '1799', 'Moscow')
+    person = Person('Alexander', 1799, 'Moscow')
     person.get_age()

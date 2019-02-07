@@ -5,7 +5,7 @@ from person import Person
 
 @pytest.fixture()
 def person_without_address():
-    return Person('Alexander', 1799)
+    return Person('Alexander', 1799, '')
 
 
 @pytest.fixture()
@@ -41,6 +41,11 @@ def test_set_address(person):
     assert person.address == 'Spb'
 
 
-def test_is_homeless(person_without_address, person):
-    assert person_without_address.is_homeless() is True
-    assert person.is_homeless() is False
+@pytest.mark.parametrize("address, expected", [
+    ('Moscow', False),
+    ('', True),
+    (None, True),
+])
+def test_is_homeless(person, address, expected):
+    person.set_address(address)
+    assert person.is_homeless() is expected
