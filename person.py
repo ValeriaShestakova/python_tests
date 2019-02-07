@@ -1,6 +1,3 @@
-import datetime
-
-
 class Person:
     def __init__(self, name, year_of_birth, address=''):
         self.name = name
@@ -28,7 +25,3 @@ class Person:
         returns True if address is not set, false in other case
         '''
         return address is None
-
-
-if __name__ == '__main__':
-    person = Person('Alexandr', '1799', 'Moscow')
