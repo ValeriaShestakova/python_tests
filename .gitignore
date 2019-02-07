@@ -1,0 +1,9 @@
+# Project folders
+.idea/
+
+# Cache folders
+__pychache__/
+
+
+# Env files
+*.lock
